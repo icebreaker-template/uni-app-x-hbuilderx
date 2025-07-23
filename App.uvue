@@ -36,6 +36,7 @@
 </script>
 
 <style>
-@import 'weapp-tailwindcss/uni-app-x';
-@source not "unpackage";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 </style>

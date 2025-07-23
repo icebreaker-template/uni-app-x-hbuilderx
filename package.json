@@ -1,8 +1,7 @@
 {
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.11",
-    "tailwindcss": "^4.1.11",
-    "weapp-tailwindcss": "^4.2.0-alpha.1",
+    "tailwindcss": "^3.4.17",
+    "weapp-tailwindcss": "^4.2.0-alpha.2",
     "@weapp-tailwindcss/debug-uni-app-x": "0.0.0"
   },
   "pnpm": {
