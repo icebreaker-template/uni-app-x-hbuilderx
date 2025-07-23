@@ -1,4 +1,5 @@
 <script lang="uts">
+
 	let firstBackTime = 0
 	export default {
 		onLaunch: function () {
@@ -34,5 +35,7 @@
 	}
 </script>
 
-<style src="./main.css">
+<style>
+@import 'weapp-tailwindcss/uni-app-x';
+@source not "unpackage";
 </style>

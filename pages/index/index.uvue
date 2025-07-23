@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="mt-[32.43rpx] bg-[red]">
+		<view class="mt-[32px] bg-[red] px-4">
 			<text class="text-[#844343]">{{title}}</text>
 		</view>
 	</view>
@@ -10,7 +10,7 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'Hello11很奇怪'
 			}
 		},
 		onLoad() {
