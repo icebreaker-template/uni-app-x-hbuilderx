@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<view class="mt-[32px] bg-[blue] px-4 py-8">
-			<text class="text-[#cccccc]/90">{{title}}</text>
+			<text class="text-[#cccccc]/90" :class="[aaa]">{{title}}</text>
 		</view>
 	</view>
 </template>
@@ -10,7 +10,8 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello world'
+				title: 'Hello world',
+				aaa: "text-[100px]"
 			}
 		},
 		onLoad() {
