@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="mt-[32px] bg-[blue] px-4 py-8">
+		<view class="mt-[32px] bg-[blue] px-4 py-[100px]">
 			<text class="text-[#cccccc]/90" :class="[aaa]">{{title}}</text>
 		</view>
 	</view>
@@ -11,7 +11,7 @@
 		data() {
 			return {
 				title: 'Hello world',
-				aaa: "text-[100px]"
+				aaa: "text-[50.55px]"
 			}
 		},
 		onLoad() {
