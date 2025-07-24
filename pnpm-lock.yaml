@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      '@weapp-tailwindcss/debug-uni-app-x':
-        specifier: 0.0.0
-        version: 0.0.0
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -411,9 +408,6 @@ packages:
 
   '@weapp-core/regex@1.0.1':
     resolution: {integrity: sha512-gRIHHAb1MoTmM1lzfaKldwNXgsScaVu9/bnZDKT0A1CgUkaHAouxvZta3yQgev91V3ZAHQ+tdwA8WGhpkstzUw==}
-
-  '@weapp-tailwindcss/debug-uni-app-x@0.0.0':
-    resolution: {integrity: sha512-2UTbWK7u9cXA8KRriTp6oSGkHa6wgI4Q5Abzy6LSMimfxP5K9ufJ7Q7h0P6l8ZARyd7S6t253mr6KNWdj1xw8A==, tarball: https://r.cnpmjs.org/@weapp-tailwindcss/debug-uni-app-x/-/debug-uni-app-x-0.0.0.tgz}
 
   '@weapp-tailwindcss/init@1.0.3-alpha.0':
     resolution: {integrity: sha512-+n/k+UmGIkHfqS6ACcLF+DwwqK9ZFqYOb474x3j5Ub8EaatqZvKHqz2KvtM4k0MwUbq+1jegSNu2bKb7D0Zbgg==}
@@ -1878,12 +1872,6 @@ snapshots:
   '@weapp-core/escape@4.0.1': {}
 
   '@weapp-core/regex@1.0.1': {}
-
-  '@weapp-tailwindcss/debug-uni-app-x@0.0.0':
-    dependencies:
-      defu: 6.1.4
-      fs-extra: 11.3.0
-      pathe: 2.0.3
 
   '@weapp-tailwindcss/init@1.0.3-alpha.0':
     dependencies:
