@@ -11,12 +11,15 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.1.11
         version: 4.1.11
+      '@weapp-tailwindcss/debug-uni-app-x':
+        specifier: ^0.0.0
+        version: 0.0.0
       tailwindcss:
         specifier: ^4.1.11
         version: 4.1.11
       weapp-tailwindcss:
-        specifier: ^4.2.0-alpha.2
-        version: 4.2.0-alpha.2(tailwindcss@4.1.11)
+        specifier: ^4.2.0-alpha.3
+        version: 4.2.0-alpha.3(tailwindcss@4.1.11)
 
 packages:
 
@@ -491,6 +494,9 @@ packages:
 
   '@weapp-core/regex@1.0.1':
     resolution: {integrity: sha512-gRIHHAb1MoTmM1lzfaKldwNXgsScaVu9/bnZDKT0A1CgUkaHAouxvZta3yQgev91V3ZAHQ+tdwA8WGhpkstzUw==}
+
+  '@weapp-tailwindcss/debug-uni-app-x@0.0.0':
+    resolution: {integrity: sha512-2UTbWK7u9cXA8KRriTp6oSGkHa6wgI4Q5Abzy6LSMimfxP5K9ufJ7Q7h0P6l8ZARyd7S6t253mr6KNWdj1xw8A==}
 
   '@weapp-tailwindcss/init@1.0.3-alpha.0':
     resolution: {integrity: sha512-+n/k+UmGIkHfqS6ACcLF+DwwqK9ZFqYOb474x3j5Ub8EaatqZvKHqz2KvtM4k0MwUbq+1jegSNu2bKb7D0Zbgg==}
@@ -1343,8 +1349,8 @@ packages:
       typescript:
         optional: true
 
-  weapp-tailwindcss@4.2.0-alpha.2:
-    resolution: {integrity: sha512-OdAUb/CbxxtQdEGyPE06lv6eRuUYQwkVBX7zfwAF4tl7RfLwPPqSSkdpoMNCH/VOuEML6ASNK0DM+tBusFBUNg==}
+  weapp-tailwindcss@4.2.0-alpha.3:
+    resolution: {integrity: sha512-NMFKhzna6oUQvrS2/MJjWJN9eGXhCl4inXWdwOlzYtWFxe9eLv3Ju6rJWGZRysRtn7r1p6iaIZKQFkmDpPa4ZA==}
     engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
 
@@ -1878,6 +1884,12 @@ snapshots:
   '@weapp-core/escape@4.0.1': {}
 
   '@weapp-core/regex@1.0.1': {}
+
+  '@weapp-tailwindcss/debug-uni-app-x@0.0.0':
+    dependencies:
+      defu: 6.1.4
+      fs-extra: 11.3.0
+      pathe: 2.0.3
 
   '@weapp-tailwindcss/init@1.0.3-alpha.0':
     dependencies:
@@ -2799,7 +2811,7 @@ snapshots:
       '@vue/server-renderer': 3.5.18(vue@3.5.18)
       '@vue/shared': 3.5.18
 
-  weapp-tailwindcss@4.2.0-alpha.2(tailwindcss@4.1.11):
+  weapp-tailwindcss@4.2.0-alpha.3(tailwindcss@4.1.11):
     dependencies:
       '@ast-core/escape': 1.0.1
       '@babel/parser': 7.28.0
