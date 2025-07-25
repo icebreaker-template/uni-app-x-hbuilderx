@@ -1,9 +1,13 @@
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
 import { UnifiedViteWeappTailwindcssPlugin } from 'weapp-tailwindcss/vite'
-import { r } from './shared'
 import { uniAppX } from 'weapp-tailwindcss/presets'
 import tailwindcss from '@tailwindcss/postcss'
+import path from 'path'
+
+function r(...args) {
+  return path.resolve(__dirname, ...args)
+}
 
 export default defineConfig({
     plugins: [

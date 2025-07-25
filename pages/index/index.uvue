@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<view class="mt-[32px] bg-[blue] px-4 py-[100px]">
-			<text class="text-[#cccccc]/90" :class="[aaa]">{{title}}</text>
+		<view class="mt-[32px] bg-[gray] px-4 py-[100px]">
+			<text class="text-[#8efa00]/90" :class="[aaa]">{{title}}</text>
 		</view>
 	</view>
 </template>
@@ -10,8 +10,8 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello world',
-				aaa: "text-[50.55px]"
+				title: 'weapp-tailwindcss',
+				aaa: "text-[40.55rpx] text-center"
 			}
 		},
 		onLoad() {
