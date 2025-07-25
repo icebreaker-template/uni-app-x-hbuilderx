@@ -1,7 +1,11 @@
 <template>
 	<view>
-		<view class="mt-[32px] bg-[blue] px-4 py-8">
-			<text class="text-[#cccccc]/90" :class="[aaa]">{{title}}</text>
+		<view class="bg-[#232323] px-4 py-8">
+			<text class="text-[#73fdff]/90" :class="[aaa]">{{title}}</text>
+			
+		</view>
+		<view>
+			<text class="text-center py-[24rpx]">tw.icebreaker.top</text>
 		</view>
 	</view>
 </template>
@@ -10,8 +14,8 @@
 	export default {
 		data() {
 			return {
-				title: 'Hello world',
-				aaa: "text-[100px]"
+				title: 'weapp-tailwindcss',
+				aaa: "text-[50rpx] text-center"
 			}
 		},
 		onLoad() {
