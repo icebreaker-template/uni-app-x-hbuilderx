@@ -12,9 +12,6 @@ export default defineConfig({
             uniAppX({
                 base: __dirname,
                 rem2rpx: true,
-                resolve: {
-                    paths: [import.meta.url],
-                },
             }),
         ),
     ],
