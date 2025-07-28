@@ -12,8 +12,8 @@ importers:
         specifier: ^3.4.17
         version: 3.4.17
       weapp-tailwindcss:
-        specifier: ^4.2.0-alpha.4
-        version: 4.2.0-alpha.4(tailwindcss@3.4.17)
+        specifier: ^4.2.1
+        version: 4.2.1(tailwindcss@3.4.17)
 
 packages:
 
@@ -57,8 +57,8 @@ packages:
     resolution: {integrity: sha512-mGe7UK5wWyh0bKRfupsUchrQGqvDbZDbKJw+kcRGSmdHVYrv+ltd0pnpDTVpiTqnaBru9iEvA8pz8W46v0Amwg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.28.1':
-    resolution: {integrity: sha512-x0LvFTekgSX+83TI28Y9wYPUfzrnl2aT5+5QLnO6v7mSJYtEEevuDRN0F0uSHRk1G1IWZC43o00Y0xDDrpBGPQ==}
+  '@babel/types@7.28.2':
+    resolution: {integrity: sha512-ruv7Ae4J5dUYULmeXw1gmb7rYRz57OWCPM57pHojnLq/3Z1CK2lNSLTCVjxVk1F/TZHwOZZrOWi0ur95BbLxNQ==}
     engines: {node: '>=6.9.0'}
 
   '@csstools/cascade-layer-name-parser@2.0.5':
@@ -409,20 +409,20 @@ packages:
   '@weapp-core/regex@1.0.1':
     resolution: {integrity: sha512-gRIHHAb1MoTmM1lzfaKldwNXgsScaVu9/bnZDKT0A1CgUkaHAouxvZta3yQgev91V3ZAHQ+tdwA8WGhpkstzUw==}
 
-  '@weapp-tailwindcss/init@1.0.3-alpha.0':
-    resolution: {integrity: sha512-+n/k+UmGIkHfqS6ACcLF+DwwqK9ZFqYOb474x3j5Ub8EaatqZvKHqz2KvtM4k0MwUbq+1jegSNu2bKb7D0Zbgg==}
+  '@weapp-tailwindcss/init@1.0.3':
+    resolution: {integrity: sha512-zEplYcy8qQu5ukl6VAfZVC4zeJe409t8f1CPuDvUNekhPUmoH37t1l1pHIlwf7W2eBn5Sics9w2iGIqWSN3hqw==}
 
-  '@weapp-tailwindcss/logger@1.0.2-alpha.0':
-    resolution: {integrity: sha512-QrnnufuMTsmiCgddIRxGL6F/0LzuPa2owrlJ9eIgtkNcROdfzk5YDGA7VHbKLvUfoqmchmOxGVmBZYRh+NQ07A==}
+  '@weapp-tailwindcss/logger@1.0.2':
+    resolution: {integrity: sha512-1G2AW8vshJH/Qh3iGNlwkJPH1K7Zyf7DznxEsTU89CuQWRvJ20l4838Mu1E5oDTTKQlBsl6XnaA1FNHfH2oecw==}
 
-  '@weapp-tailwindcss/mangle@1.0.5-alpha.0':
-    resolution: {integrity: sha512-IbH/ywuELBIvkACvKPE56z//NiIS4hF9Yqh3yt2wczmO8ZVk5dXAl57z3W3+KWG+qQO8AuNe3RzbzV9Tgrbi5g==}
+  '@weapp-tailwindcss/mangle@1.0.5':
+    resolution: {integrity: sha512-v59vYs2405ttUyLDXsdrkdwGrp0LEeZfgkycGuVE/T4h3zr45amofbRv3FnZxjMgWpyqSW+tSsxNiNFH6VPbDA==}
 
-  '@weapp-tailwindcss/postcss@1.0.17-alpha.0':
-    resolution: {integrity: sha512-tSy5/lVtOQFyaDRznM0hKxrSeivoK0JBjANHAAGsejh7284jDbuROwNr2lGdty/uSvw044O0Hfxnlo6xZsPG9Q==}
+  '@weapp-tailwindcss/postcss@1.0.18':
+    resolution: {integrity: sha512-YGDk+wl/DHhu58W0j6n6VBNI+5kovNZYksz06cLVVJmH0qcRfUxFJ5epISvUGNa8wjv131LSqpwKfIJUF4+HNg==}
 
-  '@weapp-tailwindcss/shared@1.0.3-alpha.0':
-    resolution: {integrity: sha512-PDOxQegOOrtNUx+oQNw82mtmazlkH4zIzDfv6uv8p49AC/ZGxhZGFAQoGVSUomjHjgtwo68pAA+BugKbyKqbAQ==}
+  '@weapp-tailwindcss/shared@1.0.3':
+    resolution: {integrity: sha512-g6P2zSsVosDOzYYn6zYXGiRNw9jwsBrU6EU6bakVpG4wrpDYAW2T7kJdalCM7F/QyHtkoOKhPVVfNXYwVMA62A==}
 
   acorn@8.14.1:
     resolution: {integrity: sha512-OvQ/2pUDKmgfCg++xsTX1wGxfTaszcHVcTctW4UJB4hibJx2HXxxO5UmVgyjMa+ZDsiaf5wWLXYpRWMmBI0QHg==}
@@ -1397,8 +1397,8 @@ packages:
       typescript:
         optional: true
 
-  weapp-tailwindcss@4.2.0-alpha.4:
-    resolution: {integrity: sha512-7XwL6Rd7BHLylAzSFB4CAGru9jTfV5nNx2LzjSxbQZM3iUZ3lqG4VFVw3xqsx2geE1nDHJHuKyBLGtZzFlKWzg==}
+  weapp-tailwindcss@4.2.1:
+    resolution: {integrity: sha512-uEehAvtRAGMdOfl7DwTdFx1I7gbK9AGkU8jy3jnXXN9prdi7VEkB7XfQd2+wHfdMSgy1AGcD4Zm0lHdc9LRclw==}
     engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
 
@@ -1446,7 +1446,7 @@ snapshots:
   '@babel/generator@7.28.0':
     dependencies:
       '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       '@jridgewell/gen-mapping': 0.3.12
       '@jridgewell/trace-mapping': 0.3.29
       jsesc: 3.1.0
@@ -1459,13 +1459,13 @@ snapshots:
 
   '@babel/parser@7.28.0':
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@babel/template@7.27.2':
     dependencies:
       '@babel/code-frame': 7.27.1
       '@babel/parser': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
 
   '@babel/traverse@7.28.0':
     dependencies:
@@ -1474,12 +1474,12 @@ snapshots:
       '@babel/helper-globals': 7.28.0
       '@babel/parser': 7.28.0
       '@babel/template': 7.27.2
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       debug: 4.4.1
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/types@7.28.1':
+  '@babel/types@7.28.2':
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
@@ -1873,36 +1873,36 @@ snapshots:
 
   '@weapp-core/regex@1.0.1': {}
 
-  '@weapp-tailwindcss/init@1.0.3-alpha.0':
+  '@weapp-tailwindcss/init@1.0.3':
     dependencies:
-      '@weapp-tailwindcss/logger': 1.0.2-alpha.0
-      '@weapp-tailwindcss/shared': 1.0.3-alpha.0
+      '@weapp-tailwindcss/logger': 1.0.2
+      '@weapp-tailwindcss/shared': 1.0.3
       fs-extra: 11.3.0
       npm-registry-fetch: 18.0.2
       pathe: 2.0.3
     transitivePeerDependencies:
       - supports-color
 
-  '@weapp-tailwindcss/logger@1.0.2-alpha.0':
+  '@weapp-tailwindcss/logger@1.0.2':
     dependencies:
       consola: 3.4.2
 
-  '@weapp-tailwindcss/mangle@1.0.5-alpha.0':
+  '@weapp-tailwindcss/mangle@1.0.5':
     dependencies:
       '@tailwindcss-mangle/shared': 4.1.1
       '@weapp-core/regex': 1.0.1
-      '@weapp-tailwindcss/shared': 1.0.3-alpha.0
+      '@weapp-tailwindcss/shared': 1.0.3
 
-  '@weapp-tailwindcss/postcss@1.0.17-alpha.0':
+  '@weapp-tailwindcss/postcss@1.0.18':
     dependencies:
       '@weapp-core/escape': 4.0.1
-      '@weapp-tailwindcss/shared': 1.0.3-alpha.0
+      '@weapp-tailwindcss/shared': 1.0.3
       postcss: 8.5.6
       postcss-preset-env: 10.2.4(postcss@8.5.6)
       postcss-rem-to-responsive-pixel: 6.0.2
       postcss-selector-parser: 7.1.0
 
-  '@weapp-tailwindcss/shared@1.0.3-alpha.0': {}
+  '@weapp-tailwindcss/shared@1.0.3': {}
 
   acorn@8.14.1: {}
 
@@ -2849,7 +2849,7 @@ snapshots:
       '@babel/generator': 7.28.0
       '@babel/parser': 7.28.0
       '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       '@tailwindcss-mangle/config': 5.1.1
       cac: 6.7.14
       consola: 3.4.2
@@ -2956,20 +2956,20 @@ snapshots:
       '@vue/server-renderer': 3.5.18(vue@3.5.18)
       '@vue/shared': 3.5.18
 
-  weapp-tailwindcss@4.2.0-alpha.4(tailwindcss@3.4.17):
+  weapp-tailwindcss@4.2.1(tailwindcss@3.4.17):
     dependencies:
       '@ast-core/escape': 1.0.1
       '@babel/parser': 7.28.0
       '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
       '@vue/compiler-dom': 3.5.18
       '@weapp-core/escape': 4.0.1
       '@weapp-core/regex': 1.0.1
-      '@weapp-tailwindcss/init': 1.0.3-alpha.0
-      '@weapp-tailwindcss/logger': 1.0.2-alpha.0
-      '@weapp-tailwindcss/mangle': 1.0.5-alpha.0
-      '@weapp-tailwindcss/postcss': 1.0.17-alpha.0
-      '@weapp-tailwindcss/shared': 1.0.3-alpha.0
+      '@weapp-tailwindcss/init': 1.0.3
+      '@weapp-tailwindcss/logger': 1.0.2
+      '@weapp-tailwindcss/mangle': 1.0.5
+      '@weapp-tailwindcss/postcss': 1.0.18
+      '@weapp-tailwindcss/shared': 1.0.3
       debug: 4.4.1
       htmlparser2: 10.0.0
       loader-utils: 2.0.4
