@@ -12,8 +12,8 @@ importers:
         specifier: ^3.4.17
         version: 3.4.17
       weapp-tailwindcss:
-        specifier: ^4.2.1
-        version: 4.2.1(tailwindcss@3.4.17)
+        specifier: ^4.2.2
+        version: 4.2.2(tailwindcss@3.4.17)
 
 packages:
 
@@ -418,8 +418,8 @@ packages:
   '@weapp-tailwindcss/mangle@1.0.5':
     resolution: {integrity: sha512-v59vYs2405ttUyLDXsdrkdwGrp0LEeZfgkycGuVE/T4h3zr45amofbRv3FnZxjMgWpyqSW+tSsxNiNFH6VPbDA==}
 
-  '@weapp-tailwindcss/postcss@1.0.18':
-    resolution: {integrity: sha512-YGDk+wl/DHhu58W0j6n6VBNI+5kovNZYksz06cLVVJmH0qcRfUxFJ5epISvUGNa8wjv131LSqpwKfIJUF4+HNg==}
+  '@weapp-tailwindcss/postcss@1.0.19':
+    resolution: {integrity: sha512-vY1ZdKkqX2g+4x/h9c0OV1oRcvFAo9u6SXC5XzSIy5RBY6wo1VLaiNHCEohFtlf07wLxk2nm0ktK9e/4FP1VmQ==}
 
   '@weapp-tailwindcss/shared@1.0.3':
     resolution: {integrity: sha512-g6P2zSsVosDOzYYn6zYXGiRNw9jwsBrU6EU6bakVpG4wrpDYAW2T7kJdalCM7F/QyHtkoOKhPVVfNXYwVMA62A==}
@@ -1397,8 +1397,8 @@ packages:
       typescript:
         optional: true
 
-  weapp-tailwindcss@4.2.1:
-    resolution: {integrity: sha512-uEehAvtRAGMdOfl7DwTdFx1I7gbK9AGkU8jy3jnXXN9prdi7VEkB7XfQd2+wHfdMSgy1AGcD4Zm0lHdc9LRclw==}
+  weapp-tailwindcss@4.2.2:
+    resolution: {integrity: sha512-pJB/tx+DlceZZTSqdKCkj36tjifIIIMuOuV3y+VMSatB/XUtgZh41SUGZZlHmrI/VMU3r1PhlCiMWE2PqqQx7g==}
     engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
 
@@ -1893,7 +1893,7 @@ snapshots:
       '@weapp-core/regex': 1.0.1
       '@weapp-tailwindcss/shared': 1.0.3
 
-  '@weapp-tailwindcss/postcss@1.0.18':
+  '@weapp-tailwindcss/postcss@1.0.19':
     dependencies:
       '@weapp-core/escape': 4.0.1
       '@weapp-tailwindcss/shared': 1.0.3
@@ -2956,7 +2956,7 @@ snapshots:
       '@vue/server-renderer': 3.5.18(vue@3.5.18)
       '@vue/shared': 3.5.18
 
-  weapp-tailwindcss@4.2.1(tailwindcss@3.4.17):
+  weapp-tailwindcss@4.2.2(tailwindcss@3.4.17):
     dependencies:
       '@ast-core/escape': 1.0.1
       '@babel/parser': 7.28.0
@@ -2968,7 +2968,7 @@ snapshots:
       '@weapp-tailwindcss/init': 1.0.3
       '@weapp-tailwindcss/logger': 1.0.2
       '@weapp-tailwindcss/mangle': 1.0.5
-      '@weapp-tailwindcss/postcss': 1.0.18
+      '@weapp-tailwindcss/postcss': 1.0.19
       '@weapp-tailwindcss/shared': 1.0.3
       debug: 4.4.1
       htmlparser2: 10.0.0
