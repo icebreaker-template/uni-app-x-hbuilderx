@@ -10,21 +10,9 @@
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				title: 'weapp-tailwindcss',
-				aaa: "text-[50rpx] text-center"
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
+<script lang="uts" setup>
+	const aaa = ref("text-[50rpx] text-center")
+	const title = ref('weapp-tailwindcss')
 </script>
 
 <style>
