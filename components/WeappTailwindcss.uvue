@@ -1,5 +1,5 @@
 <script setup>
-function copy(data) {
+function copy(data:string) {
   uni.setClipboardData({
     data,
   })
