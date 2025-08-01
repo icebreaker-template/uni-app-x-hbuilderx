@@ -1,0 +1,12 @@
+import { reactive } from 'vue'
+
+const counterState = reactive({
+  count: 0,
+  increment() {
+    counterState.count++
+  },
+})
+
+export const useCounterStore = () => {
+  return counterState
+}
