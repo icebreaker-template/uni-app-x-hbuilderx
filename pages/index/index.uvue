@@ -1,155 +1,89 @@
 <script setup lang="uts">
-import WeappTailwindcss from '@/components/WeappTailwindcss.uvue'
-import { state,setGlobalNum } from '@/stores/counter'
+	import WeappTailwindcss from '@/components/WeappTailwindcss.uvue'
+	import { state, setGlobalNum } from '@/stores/counter'
 
-const buttonColors = [
-  'bg-[#000]',
-  'bg-[#111]',
-  'bg-[#222]',
-  'bg-[#333]',
-  'bg-[#444]',
-  'bg-[#555]',
-  'bg-[#666]',
-  'bg-[#777]',
-  'bg-[#888]',
-  'bg-[#999]',
-  'bg-[#aaa]',
-  'bg-[#bbb]',
-  'bg-[#ccc]',
-  'bg-[#ddd]',
-  'bg-[#eee]',
-  'bg-[#fff]',
-]
-const title = ref('Hello')
-const themeRef = ref<string>('')
-const classArray = computed(() => [
- 'bg-[#aa00aa] text-[#ffffffee]' ,
-])
-const buttonClass = computed(() => {
-  return buttonColors[state.globalNum % buttonColors.length]
-})
+	const buttonColors = [
+		'bg-[#000]',
+		'bg-[#111]',
+		'bg-[#222]',
+		'bg-[#333]',
+		'bg-[#444]',
+		'bg-[#555]',
+		'bg-[#666]',
+		'bg-[#777]',
+		'bg-[#888]',
+		'bg-[#999]',
+		'bg-[#aaa]',
+		'bg-[#bbb]',
+		'bg-[#ccc]',
+		'bg-[#ddd]',
+		'bg-[#eee]',
+		'bg-[#fff]',
+	]
+	const title = ref('Hello')
+	const themeRef = ref<string>('')
+	const classArray = computed(() => [
+		'bg-[#aa00aa] text-[#ffffffee]',
+	])
+	const buttonClass = computed(() => {
+		return buttonColors[state.globalNum % buttonColors.length]
+	})
 
-// #ifdef MP
-uni.onThemeChange(({ theme }: { theme: 'dark' | 'light' }) => {
-  themeRef.value = theme
-})
-// #endif
-onBeforeUnmount(() => {
-  // #ifdef MP
-  uni.offThemeChange(() => {
-    console.log('offThemeChange')
-  })
-  // #endif
-})
+	// #ifdef MP
+	uni.onThemeChange(({ theme } : { theme : 'dark' | 'light' }) => {
+		themeRef.value = theme
+	})
+	// #endif
+	onBeforeUnmount(() => {
+		// #ifdef MP
+		uni.offThemeChange(() => {
+			console.log('offThemeChange')
+		})
+		// #endif
+	})
 
-onLoad(() => {
-  console.log('欢迎使用 weapp-tailwindcss 模板')
-})
+	onLoad(() => {
+		console.log('欢迎使用 weapp-tailwindcss 模板')
+	})
 
-function copy(data: string) {
-  uni.setClipboardData({
-    data,
-  })
-}
+	function copy(data : string) {
+		uni.setClipboardData({
+			data,
+		})
+	}
 </script>
 
 <template>
-  <view class="content">
-    <WeappTailwindcss />
-    <view class="my-3 w-full border-t border-solid border-gray-200" />
-    <text class="text-xl text-gray-600/95">
-      写法示例Start!
-    </text>
-    <view class="mt-[13.14758px] flex flex-col items-center">
-      <view
-        class="flex h-16 w-32 items-center justify-center rounded-[20rpx] bg-[#389f2bb1] text-white after:content-['hover_here!']"
-        hover-class="!bg-[gray] after:!content-['good_work!']"
-      />
-      <text class="text-neutral-400">
-        group published 示例
-      </text>
-      <view
-        class="group relative rounded bg-green-300 p-[60px] text-xs before:absolute before:left-1 before:top-1 before:content-['父元素']"
-        hover-class="published"
-      >
-        <text class="rounded bg-pink-400 p-2 group-[.published]:bg-yellow-400">
-          hover 父元素使得子元素背景变成黄色
-        </text>
-      </view>
-
-      <text class="w-32 rounded-md bg-pink-500 py-2 text-center font-semibold text-white ring-4 ring-pink-300">
-        Default Ring
-      </text>
-      <view>
-        <button class="w-64 text-white" :class="buttonClass" @click="setGlobalNum(state.globalNum+1)">
-          click here to inc {{ state.globalNum }}
-        </button>
-      </view>
-
-      <text class="test">
-        @apply 的用法，详见 `index.vue` 的 `style` 标签块
-      </text>
-      <text class="text-neutral-600 underline" @click="copy('https://weapp-tw.icebreaker.top/docs/icons')">
-        Grid布局+ Icon 方案（点击复制链接）
-      </text>
-      <view
-        class="grid grid-cols-3 place-items-center border text-center text-[32px]"
-      >
-        <view :class="classArray">
-          <text class="iconify svg-spinners--12-dots-scale-rotate" />
-        </view>
-        <view><text class="iconify svg-spinners--180-ring" /></view>
-        <view :class="classArray">
-          <text class="iconify svg-spinners--3-dots-bounce" />
-        </view>
-        <view>
-          <text class="iconify svg-spinners--6-dots-rotate" />
-        </view>
-        <view :class="classArray">
-          <text class="iconify svg-spinners--90-ring" />
-        </view>
-        <view>
-          <text class="iconify svg-spinners--bars-fade" />
-        </view>
-        <view :class="classArray">
-          <text class="iconify svg-spinners--blocks-scale" />
-        </view>
-        <view>
-          <text class="iconify svg-spinners--clock" />
-        </view>
-        <view :class="classArray">
-          <text class="iconify svg-spinners--tadpole" />
-        </view>
-      </view>
-      <view>
-        <view class="mb-4 text-neutral-400">
-          样式的条件编译
-          <text
-            class="text-sky-400 underline" @click="
-              copy(
-                'https://weapp-tw.icebreaker.top/docs/quick-start/uni-app-css-macro',
-              )
-            "
-          >
-            weapp-tailwindcss/css-macro
-          </text>
-        </view>
-      </view>
-      <view>
-        <button class="btn">
-          此样式定义详见 `App.vue` 的 `@layer` 部分
-        </button>
-      </view>
-    </view>
-  </view>
+	<view class="content">
+		<WeappTailwindcss />
+		<view class="my-3 w-full border-t border-solid border-gray-200" />
+		<text class="text-xl text-gray-600/95">
+			写法示例Start!
+		</text>
+		<view class="mt-[13.14758px] flex flex-col items-center">
+			<text class="w-32 rounded-md bg-pink-500 py-2 text-center font-semibold text-white ring-4 ring-pink-300">
+				Default Ring
+			</text>
+			<view>
+				<button class="w-64 text-white" :class="buttonClass" @click="setGlobalNum(state.globalNum+1)">
+					click here to inc {{ state.globalNum }}
+				</button>
+			</view>
+			<view class="test">
+				<text class="text-[#ffffff] text-center">
+					@apply 的用法，详见 `index.vue` 的 `style` 标签块
+				</text>
+			</view>
+		</view>
+	</view>
 </template>
 
 <style lang="scss" scoped>
-.content {
-  @apply flex flex-col items-center py-4;
-}
+	.content {
+		@apply flex flex-col items-center py-4;
+	}
 
-.test {
-  @apply flex text-center h-[100px] w-[222.222px] items-center justify-center rounded-[40px] bg-[#123456] bg-opacity-[0.54] text-[#ffffff] #{!important};
-}
+	.test {
+		@apply flex h-[100px] w-[222.222px] items-center justify-center rounded-[40px] bg-[#123456] bg-opacity-[0.54] #{!important};
+	}
 </style>
