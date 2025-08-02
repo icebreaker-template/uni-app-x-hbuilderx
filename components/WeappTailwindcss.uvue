@@ -8,19 +8,10 @@
 
 <template>
 	<view class="px-4">
-		<view class="px-[48px]">
-			<view class="bg-[length:100%_100%] bg-no-repeat" />
-		</view>
-		<!-- <view class="flex items-center justify-center"
-			@click="copy('https://github.com/sonofmagic/weapp-tailwindcss')">
-			<view >
-				<text class="text-[22px]">+</text>
-			</view>
-		</view> -->
+		<image src="/static/logo-text-colorful.png" class="w-[300px] h-[48.3px]"></image>
 		<view
-			
 			@click="copy('https://tw.icebreaker.top/')">
-			<text class="text-2xl font-extrabold underline">
+			<text class="text-2xl underline text-center">
 				tw.icebreaker.top
 			</text>
 
