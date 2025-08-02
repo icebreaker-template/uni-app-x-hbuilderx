@@ -84,6 +84,6 @@
 	}
 
 	.test {
-		@apply flex mt-3 h-[100px] w-[222.222px] items-center justify-center rounded-[40px] bg-[#123456] bg-opacity-[0.54] #{!important};
+		@apply flex mt-3 h-[100px] w-[222.222px] items-center justify-center rounded-[40px] bg-[#123456] bg-opacity-[0.54];
 	}
 </style>
