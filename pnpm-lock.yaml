@@ -24,8 +24,8 @@ importers:
         specifier: ^3.4.17
         version: 3.4.17
       weapp-tailwindcss:
-        specifier: ^4.2.2
-        version: 4.2.2(tailwindcss@3.4.17)
+        specifier: ^4.2.3
+        version: 4.2.3(tailwindcss@3.4.17)
 
 packages:
 
@@ -1424,8 +1424,8 @@ packages:
       typescript:
         optional: true
 
-  weapp-tailwindcss@4.2.2:
-    resolution: {integrity: sha512-pJB/tx+DlceZZTSqdKCkj36tjifIIIMuOuV3y+VMSatB/XUtgZh41SUGZZlHmrI/VMU3r1PhlCiMWE2PqqQx7g==}
+  weapp-tailwindcss@4.2.3:
+    resolution: {integrity: sha512-hvZwbRmGTF2W7F4DfUQ2LZqGzk6DsacR0vRelcCjnc9+TlLb8cYD0hvrjum1hcF4KsoDwQ/XQWjj8QM9+k/NUw==}
     engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
 
@@ -3003,7 +3003,7 @@ snapshots:
       '@vue/server-renderer': 3.5.18(vue@3.5.18)
       '@vue/shared': 3.5.18
 
-  weapp-tailwindcss@4.2.2(tailwindcss@3.4.17):
+  weapp-tailwindcss@4.2.3(tailwindcss@3.4.17):
     dependencies:
       '@ast-core/escape': 1.0.1
       '@babel/parser': 7.28.0
