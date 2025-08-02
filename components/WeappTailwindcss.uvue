@@ -1,0 +1,32 @@
+<script setup>
+	function copy(data : string) {
+		uni.setClipboardData({
+			data,
+		})
+	}
+</script>
+
+<template>
+	<view class="px-4">
+		<view class="px-[48px]">
+			<view class="bg-[length:100%_100%] bg-no-repeat" />
+		</view>
+		<!-- <view class="flex items-center justify-center"
+			@click="copy('https://github.com/sonofmagic/weapp-tailwindcss')">
+			<view >
+				<text class="text-[22px]">+</text>
+			</view>
+		</view> -->
+		<view
+			
+			@click="copy('https://tw.icebreaker.top/')">
+			<text class="text-2xl font-extrabold underline">
+				tw.icebreaker.top
+			</text>
+
+		</view>
+		<view>
+			<text class="text-xs text-gray-600/75">你可以在上方的官网上，找到大量的提效解决方案</text>
+		</view>
+	</view>
+</template>

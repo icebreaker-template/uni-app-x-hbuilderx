@@ -35,8 +35,15 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*  #ifdef  H5  */
+svg {
+  display: initial;
+}
+
+/*  #endif  */
 </style>
