@@ -21,6 +21,7 @@
 		'bg-[#fff]',
 	]
 	const title = ref('Hello')
+	const isDark = ref(false)
 	const themeRef = ref<string>('')
 	const classArray = computed(() => [
 		'bg-[#aa00aa] text-[#ffffffee]',
@@ -51,10 +52,14 @@
 			data,
 		})
 	}
+
+	function toggleTheme() {
+		isDark.value = !isDark.value
+	}
 </script>
 
 <template>
-	<view class="content">
+	<view class="content" :class="[isDark?'dark':'light']">
 		<WeappTailwindcss />
 		<view class="my-3 w-full border-t border-solid border-gray-200" />
 		<text class="text-xl text-gray-600/95">
@@ -75,6 +80,7 @@
 				</text>
 			</view>
 		</view>
+		<button @click="toggleTheme">Toggle Theme</button>
 	</view>
 </template>
 

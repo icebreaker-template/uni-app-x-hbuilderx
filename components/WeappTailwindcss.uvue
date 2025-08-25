@@ -7,7 +7,7 @@
 </script>
 
 <template>
-	<view class="px-4">
+	<view class="px-4 bg-slate-100 dark:text-white dark:bg-black">
 		<image src="/static/logo-text-colorful.png" class="w-[300px] h-[48.3px]"></image>
 		<view
 			@click="copy('https://tw.icebreaker.top/')">
