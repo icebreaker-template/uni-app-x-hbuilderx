@@ -1,14 +1,12 @@
 {
+  "name": "uni-app-x-weapp-tailwindcss-template",
   "scripts": {
     "postinstall": "weapp-tw patch"
   },
   "devDependencies": {
-    "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/svg-spinners": "^1.2.2",
-    "@iconify/tailwind": "^1.2.0",
     "tailwindcss": "^3.4.17",
-    "weapp-tailwindcss": "^4.2.4",
-    "@weapp-tailwindcss/debug-uni-app-x": "^0.0.0"
+    "@weapp-tailwindcss/debug-uni-app-x": "^0.0.0",
+    "weapp-tailwindcss": "^4.2.5"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

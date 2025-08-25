@@ -1,5 +1,4 @@
 const { r } = require('./shared')
-const { addIconSelectors } = require("@iconify/tailwind")
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -11,7 +10,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    addIconSelectors(['svg-spinners', 'mdi']),
+    
   ],
   corePlugins: {
     preflight: false,
