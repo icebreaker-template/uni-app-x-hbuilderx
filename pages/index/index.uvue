@@ -81,11 +81,36 @@
 </template>
 
 <style lang="scss" scoped>
-	.content {
-		@apply flex flex-col items-center py-4;
+@use "sass:math";
+
+.cl-col {
+	@apply w-full overflow-visible;
+}
+
+@for $i from 1 through 24 {
+	.cl-col-push-#{$i},
+	.cl-col-pull-#{$i} {
+		position: relative;
+	}
+}
+
+@for $i from 1 through 24 {
+	$w: math.div(100%, 24);
+
+	.cl-col-#{$i} {
+		width: $w * $i;
 	}
 
-	.test {
-		@apply flex mt-3 h-[100px] w-[222.222px] items-center justify-center rounded-[40px] bg-[#31edd8] bg-opacity-[0.54];
+	.cl-col-offset-#{$i} {
+		margin-left: $w * $i;
 	}
+
+	.cl-col-pull-#{$i} {
+		right: $w * $i;
+	}
+
+	.cl-col-push-#{$i} {
+		left: $w * $i;
+	}
+}
 </style>
