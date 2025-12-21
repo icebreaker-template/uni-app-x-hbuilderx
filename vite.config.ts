@@ -10,7 +10,6 @@ export default defineConfig({
         uni(),
         UnifiedViteWeappTailwindcssPlugin(
             uniAppX({
-                base: __dirname,
                 rem2rpx: true,
             }),
         ),
