@@ -19,5 +19,23 @@
 		<view>
 			<text class="text-xs text-gray-600/75">你可以在上方的官网上，找到大量的提效解决方案</text>
 		</view>
+		<view class="unit-test">
+			<text>unit test</text>
+		</view>
 	</view>
 </template>
+
+<style>
+	.unit-test {
+		font-size: 1rem;
+		letter-spacing: 0.25em;
+		width: 20vw;
+		height: 12vh;
+		min-width: 10vmin;
+		max-width: 24vmax;
+		margin-top: 6rpx;
+		padding: 8rpx;
+		border-radius: 4rpx;
+		background: #eef2ff;
+	}
+</style>
