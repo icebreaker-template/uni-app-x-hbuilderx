@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@dcloudio/hbuilderx-cli':
+        specifier: ^1.2.0
+        version: 1.2.0
       tailwindcss:
         specifier: ^3.4.19
         version: 3.4.19
@@ -360,6 +363,11 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       postcss: ^8.4
+
+  '@dcloudio/hbuilderx-cli@1.2.0':
+    resolution: {integrity: sha512-ANkrsPBLplAp+SOToGeqFcWD7O+P8gAj+MO+/LlD6PBIzDgLUU5TSJC3gM2lGg8r+foRF5gPX2i2zKHXej9qcQ==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -1717,6 +1725,8 @@ snapshots:
   '@csstools/utilities@2.0.0(postcss@8.5.6)':
     dependencies:
       postcss: 8.5.6
+
+  '@dcloudio/hbuilderx-cli@1.2.0': {}
 
   '@isaacs/cliui@8.0.2':
     dependencies:

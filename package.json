@@ -4,6 +4,7 @@
     "postinstall": "weapp-tw patch"
   },
   "devDependencies": {
+    "@dcloudio/hbuilderx-cli": "^1.2.0",
     "tailwindcss": "^3.4.19",
     "weapp-tailwindcss": "^4.10.3"
   },
@@ -12,5 +13,5 @@
       "weapp-tailwindcss"
     ]
   },
-  "packageManager": "pnpm@10.29.3"
+  "packageManager": "pnpm@10.33.0"
 }
