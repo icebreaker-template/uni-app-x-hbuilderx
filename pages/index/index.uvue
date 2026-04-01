@@ -1,91 +1,251 @@
 <script setup lang="uts">
-	import WeappTailwindcss from '@/components/WeappTailwindcss.uvue'
-	import BindClass from '@/components/BindClass.uvue'
-	import { state, setGlobalNum } from '@/stores/counter'
-
-	const buttonColors = [
-		'bg-[#000]',
-		'bg-[#111]',
-		'bg-[#222]',
-		'bg-[#333]',
-		'bg-[#444]',
-		'bg-[#555]',
-		'bg-[#666]',
-		'bg-[#777]',
-		'bg-[#888]',
-		'bg-[#999]',
-		'bg-[#aaa]',
-		'bg-[#bbb]',
-		'bg-[#ccc]',
-		'bg-[#ddd]',
-		'bg-[#eee]',
-		'bg-[#fff]',
-	]
-	const title = ref('Hello')
-	const themeRef = ref<string>('')
-	const classArray = computed(() => [
-		'bg-[#aa00aa] text-[#ffffffee]',
-	])
-	const buttonClass = computed(() => {
-		return buttonColors[state.globalNum % buttonColors.length]
-	})
-
-	// #ifdef MP
-	uni.onThemeChange(({ theme } : { theme : 'dark' | 'light' }) => {
-		themeRef.value = theme
-	})
-	// #endif
-	onBeforeUnmount(() => {
-		// #ifdef MP
-		uni.offThemeChange(() => {
-			console.log('offThemeChange')
-		})
-		// #endif
-	})
-
-	onLoad(() => {
-		console.log('欢迎使用 weapp-tailwindcss 模板')
-	})
-
-	function copy(data : string) {
-		uni.setClipboardData({
-			data,
-		})
+	type QuickEntry = {
+		title : string
+		desc : string
+		badge : string
+		tone : string
 	}
+
+	type InsightCard = {
+		kicker : string
+		title : string
+		desc : string
+		metric : string
+		tone : string
+	}
+
+	type RankingItem = {
+		name : string
+		value : string
+		change : string
+	}
+
+	type ChartBar = {
+		label : string
+		value : string
+		height : string
+		tone : string
+	}
+
+	const quickEntries : QuickEntry[] = [
+		{ title: '经营总览', desc: '核心经营指标与趋势', badge: '01', tone: 'from-[#3b82f6] to-[#1d4ed8]' },
+		{ title: '商品表现', desc: '爆品结构与动销效率', badge: '02', tone: 'from-[#f59e0b] to-[#d97706]' },
+		{ title: '投放分析', desc: '渠道效果与转化漏斗', badge: '03', tone: 'from-[#10b981] to-[#0f766e]' },
+		{ title: '会员资产', desc: '分层经营与复购表现', badge: '04', tone: 'from-[#8b5cf6] to-[#6d28d9]' },
+	]
+
+	const insightCards : InsightCard[] = [
+		{ kicker: '今日重点', title: '新品首发带动成交跃升', desc: '直播引流与搜索成交同步放大，首页点击率保持高位。', metric: '+24.8%', tone: 'bg-[#eff6ff] text-[#1d4ed8]' },
+		{ kicker: '经营建议', title: '高潜类目建议追加曝光', desc: '杯具与收纳周环比提升明显，可优先补强详情页素材。', metric: '+13.2%', tone: 'bg-[#f0fdf4] text-[#15803d]' },
+		{ kicker: '风险提示', title: '尾部商品库存周转放缓', desc: '低动销 SKU 占比持续抬升，建议执行分层清退策略。', metric: '-6.4%', tone: 'bg-[#fff7ed] text-[#c2410c]' },
+	]
+
+	const rankingItems : RankingItem[] = [
+		{ name: '办公键盘套装', value: '128,400', change: '+18%' },
+		{ name: '桌面收纳盒', value: '96,220', change: '+12%' },
+		{ name: '蓝牙便携音箱', value: '75,610', change: '+9%' },
+		{ name: '旅行保温杯', value: '61,030', change: '+7%' },
+	]
+
+	const conversionBars : ChartBar[] = [
+		{ label: '曝光', value: '128w', height: 'h-[180rpx]', tone: 'bg-[#1d4ed8]' },
+		{ label: '点击', value: '42w', height: 'h-[132rpx]', tone: 'bg-[#3b82f6]' },
+		{ label: '加购', value: '19w', height: 'h-[104rpx]', tone: 'bg-[#60a5fa]' },
+		{ label: '支付', value: '9.8w', height: 'h-[76rpx]', tone: 'bg-[#93c5fd]' },
+	]
+
+	const trendBars : ChartBar[] = [
+		{ label: 'Mon', value: '78', height: 'h-[92rpx]', tone: 'bg-[#f59e0b]' },
+		{ label: 'Tue', value: '86', height: 'h-[128rpx]', tone: 'bg-[#fbbf24]' },
+		{ label: 'Wed', value: '73', height: 'h-[84rpx]', tone: 'bg-[#f59e0b]' },
+		{ label: 'Thu', value: '95', height: 'h-[154rpx]', tone: 'bg-[#f59e0b]' },
+		{ label: 'Fri', value: '118', height: 'h-[190rpx]', tone: 'bg-[#d97706]' },
+		{ label: 'Sat', value: '102', height: 'h-[166rpx]', tone: 'bg-[#f59e0b]' },
+		{ label: 'Sun', value: '88', height: 'h-[142rpx]', tone: 'bg-[#fbbf24]' },
+	]
+
+	const categoryShares = [
+		{ name: '家居日用', value: '36%', width: 'w-[36%]', tone: 'bg-[#1d4ed8]' },
+		{ name: '数码配件', value: '24%', width: 'w-[24%]', tone: 'bg-[#3b82f6]' },
+		{ name: '水具厨具', value: '18%', width: 'w-[18%]', tone: 'bg-[#60a5fa]' },
+		{ name: '个护清洁', value: '12%', width: 'w-[12%]', tone: 'bg-[#93c5fd]' },
+		{ name: '其他', value: '10%', width: 'w-[10%]', tone: 'bg-[#bfdbfe]' },
+	]
+
+	const articleRows = [
+		{ tag: '专题', title: '大促节奏拆解：从预热到收口的经营节拍', desc: '用一套清晰的节奏图，统一页面、投放和私域动作。', tone: 'bg-[#eff6ff] text-[#1d4ed8]' },
+		{ tag: '案例', title: '从低客单到高复购，会员专区如何改版', desc: '拆分新客任务、老客权益和沉默召回三个层级。', tone: 'bg-[#ecfeff] text-[#0f766e]' },
+		{ tag: '报告', title: '年度消费观察：办公场景需求持续细分', desc: '高频刚需品类稳定增长，颜值与组合购买意愿提升。', tone: 'bg-[#fef2f2] text-[#b91c1c]' },
+		{ tag: '方法', title: '用内容矩阵提升搜索与推荐场景的成交效率', desc: '统一首图、卖点和视频封面，提升列表停留与转化。', tone: 'bg-[#fff7ed] text-[#c2410c]' },
+	]
 </script>
 
 <template>
-	<view class="content">
-		<WeappTailwindcss />
-		<view class="my-3 w-full border-t border-solid border-gray-200" />
-		<text class="text-xl text-gray-600/95">
-			写法示例Start!
-		</text>
-		<view class="mt-[13.14758px] flex flex-col items-center">
-			<text class="w-32 rounded-md bg-[#f21903] py-2 text-center text-white">
-				圆角+背景+文本
-			</text>
-			<view class="mt-3">
-				<button class="w-64 text-white" :class="buttonClass" @click="setGlobalNum(state.globalNum+1)">
-					click here to inc {{ state.globalNum }}
-				</button>
+	<scroll-view scroll-y class="min-h-screen bg-[#f5f7fb]">
+		<view class="px-[24rpx] pb-[40rpx] pt-[20rpx]">
+			<view class="overflow-hidden rounded-[36rpx] bg-[#0f172a] px-[28rpx] pb-[28rpx] pt-[30rpx] text-white shadow-[0_18rpx_60rpx_rgba(15,23,42,0.24)]">
+				<view class="flex items-start justify-between">
+					<view>
+						<text class="text-[24rpx] text-white/65">Business Intelligence</text>
+						<view class="mt-[10rpx] flex items-center gap-[10rpx]">
+							<text class="text-[42rpx] font-semibold text-white">行业经营洞察</text>
+							<view class="rounded-full bg-[#f59e0b]/20 px-[12rpx] py-[4rpx]">
+								<text class="text-[20rpx] text-[#fbbf24]">2026</text>
+							</view>
+						</view>
+					</view>
+					<image src="/static/logo.png" class="h-[64rpx] w-[64rpx] rounded-[18rpx] bg-white/10 p-[10rpx]" />
+				</view>
+
+				<view class="mt-[28rpx] rounded-[32rpx] border border-white/10 bg-white/5 p-[22rpx]">
+					<view class="flex items-center justify-between">
+						<view>
+							<text class="text-[22rpx] text-white/65">年度目标完成率</text>
+							<view class="mt-[12rpx] flex items-end gap-[12rpx]">
+								<text class="text-[72rpx] font-semibold leading-none text-white">82</text>
+								<text class="mb-[8rpx] text-[28rpx] text-white/72">%</text>
+							</view>
+						</view>
+						<view class="relative h-[188rpx] w-[188rpx] items-center justify-center rounded-full border-[10rpx] border-[#f59e0b]/30 bg-[#111827]">
+							<view class="absolute inset-[18rpx] rounded-full border-[8rpx] border-[#fbbf24]" />
+							<view class="absolute inset-[46rpx] rounded-full bg-[#111827]" />
+							<view class="absolute inset-0 items-center justify-center">
+								<text class="text-[26rpx] text-[#fde68a]">同比 +16.8%</text>
+							</view>
+						</view>
+					</view>
+
+					<view class="mt-[26rpx] grid grid-cols-3 gap-[16rpx]">
+						<view class="rounded-[24rpx] bg-white/6 px-[18rpx] py-[16rpx]">
+							<text class="text-[20rpx] text-white/55">GMV</text>
+							<text class="mt-[8rpx] block text-[34rpx] font-semibold text-white">¥ 8.42M</text>
+						</view>
+						<view class="rounded-[24rpx] bg-white/6 px-[18rpx] py-[16rpx]">
+							<text class="text-[20rpx] text-white/55">支付买家</text>
+							<text class="mt-[8rpx] block text-[34rpx] font-semibold text-white">126k</text>
+						</view>
+						<view class="rounded-[24rpx] bg-white/6 px-[18rpx] py-[16rpx]">
+							<text class="text-[20rpx] text-white/55">客单价</text>
+							<text class="mt-[8rpx] block text-[34rpx] font-semibold text-white">¥ 66.8</text>
+						</view>
+					</view>
+				</view>
 			</view>
-			<view class="test">
-				<text class="text-[#da0e3c] text-center">
-					@apply 的用法，详见 `index.vue` 的 `style` 标签块
-				</text>
+
+			<view class="mt-[24rpx] rounded-[32rpx] bg-white p-[24rpx] shadow-[0_12rpx_32rpx_rgba(15,23,42,0.06)]">
+				<view class="flex items-center justify-between">
+					<text class="text-[30rpx] font-semibold text-[#0f172a]">快捷入口</text>
+					<text class="text-[22rpx] text-[#64748b]">Quick Access</text>
+				</view>
+				<view class="mt-[22rpx] grid grid-cols-2 gap-[18rpx]">
+					<view v-for="item in quickEntries" :key="item.title" class="overflow-hidden rounded-[28rpx] border border-[#e2e8f0] bg-[#f8fafc] p-[20rpx]">
+						<view :class="`inline-flex rounded-full bg-gradient-to-r px-[14rpx] py-[6rpx] ${item.tone}`">
+							<text class="text-[18rpx] font-medium text-white">{{ item.badge }}</text>
+						</view>
+						<text class="mt-[18rpx] block text-[28rpx] font-semibold text-[#0f172a]">{{ item.title }}</text>
+						<text class="mt-[8rpx] block text-[22rpx] leading-[32rpx] text-[#64748b]">{{ item.desc }}</text>
+					</view>
+				</view>
+			</view>
+
+			<view class="mt-[24rpx] space-y-[18rpx]">
+				<view v-for="card in insightCards" :key="card.title" class="rounded-[32rpx] bg-white p-[24rpx] shadow-[0_12rpx_32rpx_rgba(15,23,42,0.06)]">
+					<view class="flex items-start justify-between gap-[20rpx]">
+						<view class="flex-1">
+							<view :class="`inline-flex rounded-full px-[14rpx] py-[6rpx] ${card.tone}`">
+								<text class="text-[18rpx] font-medium">{{ card.kicker }}</text>
+							</view>
+							<text class="mt-[14rpx] block text-[30rpx] font-semibold leading-[42rpx] text-[#0f172a]">{{ card.title }}</text>
+							<text class="mt-[10rpx] block text-[22rpx] leading-[34rpx] text-[#64748b]">{{ card.desc }}</text>
+						</view>
+						<view class="rounded-[24rpx] bg-[#0f172a] px-[18rpx] py-[14rpx]">
+							<text class="text-[26rpx] font-semibold text-[#f8fafc]">{{ card.metric }}</text>
+						</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="mt-[24rpx] rounded-[32rpx] bg-white p-[24rpx] shadow-[0_12rpx_32rpx_rgba(15,23,42,0.06)]">
+				<view class="flex items-center justify-between">
+					<text class="text-[30rpx] font-semibold text-[#0f172a]">转化漏斗</text>
+					<text class="text-[22rpx] text-[#64748b]">曝光到支付</text>
+				</view>
+				<view class="mt-[24rpx] flex items-end justify-between rounded-[28rpx] bg-[#eff6ff] px-[18rpx] pb-[18rpx] pt-[40rpx]">
+					<view v-for="item in conversionBars" :key="item.label" class="w-[22%] items-center">
+						<text class="mb-[12rpx] text-[20rpx] font-medium text-[#1e3a8a]">{{ item.value }}</text>
+						<view :class="`${item.height} ${item.tone} w-full rounded-t-[18rpx]`" />
+						<text class="mt-[10rpx] text-[20rpx] text-[#475569]">{{ item.label }}</text>
+					</view>
+				</view>
+			</view>
+
+			<view class="mt-[24rpx] rounded-[32rpx] bg-white p-[24rpx] shadow-[0_12rpx_32rpx_rgba(15,23,42,0.06)]">
+				<view class="flex items-center justify-between">
+					<text class="text-[30rpx] font-semibold text-[#0f172a]">热销榜单</text>
+					<text class="text-[22rpx] text-[#64748b]">Top 4</text>
+				</view>
+				<view class="mt-[18rpx] space-y-[14rpx]">
+					<view v-for="(item, index) in rankingItems" :key="item.name" class="flex items-center justify-between rounded-[24rpx] bg-[#f8fafc] px-[18rpx] py-[18rpx]">
+						<view class="flex items-center gap-[16rpx]">
+							<view class="h-[52rpx] w-[52rpx] items-center justify-center rounded-full bg-[#dbeafe]">
+								<text class="text-[22rpx] font-semibold text-[#1d4ed8]">{{ index + 1 }}</text>
+							</view>
+							<view>
+								<text class="block text-[26rpx] font-semibold text-[#0f172a]">{{ item.name }}</text>
+								<text class="mt-[4rpx] block text-[20rpx] text-[#64748b]">成交额 {{ item.value }}</text>
+							</view>
+						</view>
+						<text class="text-[22rpx] font-medium text-[#16a34a]">{{ item.change }}</text>
+					</view>
+				</view>
+			</view>
+
+			<view class="mt-[24rpx] rounded-[32rpx] bg-white p-[24rpx] shadow-[0_12rpx_32rpx_rgba(15,23,42,0.06)]">
+				<view class="flex items-center justify-between">
+					<text class="text-[30rpx] font-semibold text-[#0f172a]">周趋势</text>
+					<text class="text-[22rpx] text-[#64748b]">近 7 日访客指数</text>
+				</view>
+				<view class="mt-[24rpx] flex items-end justify-between rounded-[28rpx] bg-[#fff7ed] px-[16rpx] pb-[18rpx] pt-[26rpx]">
+					<view v-for="item in trendBars" :key="item.label" class="w-[12%] items-center">
+						<view :class="`${item.height} ${item.tone} w-full rounded-t-[16rpx]`" />
+						<text class="mt-[10rpx] text-[18rpx] text-[#7c2d12]">{{ item.label }}</text>
+					</view>
+				</view>
+			</view>
+
+			<view class="mt-[24rpx] rounded-[32rpx] bg-white p-[24rpx] shadow-[0_12rpx_32rpx_rgba(15,23,42,0.06)]">
+				<view class="flex items-center justify-between">
+					<text class="text-[30rpx] font-semibold text-[#0f172a]">类目份额</text>
+					<text class="text-[22rpx] text-[#64748b]">Category Mix</text>
+				</view>
+				<view class="mt-[20rpx] space-y-[18rpx]">
+					<view v-for="item in categoryShares" :key="item.name">
+						<view class="mb-[8rpx] flex items-center justify-between">
+							<text class="text-[22rpx] text-[#334155]">{{ item.name }}</text>
+							<text class="text-[22rpx] font-medium text-[#0f172a]">{{ item.value }}</text>
+						</view>
+						<view class="h-[18rpx] rounded-full bg-[#e2e8f0]">
+							<view :class="`${item.width} ${item.tone} h-full rounded-full`" />
+						</view>
+					</view>
+				</view>
+			</view>
+
+			<view class="mt-[24rpx] rounded-[32rpx] bg-white p-[24rpx] shadow-[0_12rpx_32rpx_rgba(15,23,42,0.06)]">
+				<view class="flex items-center justify-between">
+					<text class="text-[30rpx] font-semibold text-[#0f172a]">研究与解读</text>
+					<text class="text-[22rpx] text-[#64748b]">Insights Feed</text>
+				</view>
+				<view class="mt-[18rpx] space-y-[16rpx]">
+					<view v-for="item in articleRows" :key="item.title" class="rounded-[26rpx] border border-[#e2e8f0] bg-[#f8fafc] p-[18rpx]">
+						<view :class="`inline-flex rounded-full px-[14rpx] py-[6rpx] ${item.tone}`">
+							<text class="text-[18rpx] font-medium">{{ item.tag }}</text>
+						</view>
+						<text class="mt-[14rpx] block text-[28rpx] font-semibold leading-[40rpx] text-[#0f172a]">{{ item.title }}</text>
+						<text class="mt-[8rpx] block text-[22rpx] leading-[34rpx] text-[#64748b]">{{ item.desc }}</text>
+					</view>
+				</view>
 			</view>
 		</view>
-		<BindClass />
-	</view>
+	</scroll-view>
 </template>
-
-<style lang="scss" scoped>
-	.content {
-		@apply flex flex-col items-center py-4;
-	}
-
-	.test {
-		@apply flex mt-3 h-[100px] w-[222.222px] items-center justify-center rounded-[40px] bg-[#31edd8] bg-opacity-[0.54];
-	}
-</style>
