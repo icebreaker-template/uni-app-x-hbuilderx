@@ -15,6 +15,8 @@ Day-to-day development is expected to happen by importing the project into `HBui
 ## Coding Style & Naming Conventions
 Follow the existing file-local style. `uvue` files currently use tabs in templates/scripts, while `uts` files use 2-space indentation. Keep imports grouped at the top, prefer `<script setup lang="uts">` for page components, and name components in PascalCase like `WeappTailwindcss.uvue`. Keep store modules lowercase and descriptive, for example `stores/counter.uts`. When adding Tailwind classes, make sure new `uts` or `uvue` paths are covered by `tailwind.config.js`.
 
+Implement UI styling with Tailwind utility classes and `@apply` only. Do not introduce handwritten CSS rules unless an existing file already depends on them and Tailwind cannot express the requirement.
+
 ## Testing Guidelines
 No automated test runner, coverage gate, or lint script is committed in this template. Validate changes by running the app in `HBuilderX` and checking the affected target platform manually. For new tests, place them close to the feature they cover and use a name that mirrors the source file, for example `counter.test.uts`.
 
