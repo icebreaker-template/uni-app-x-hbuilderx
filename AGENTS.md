@@ -23,3 +23,6 @@ Recent history uses short Conventional Commit prefixes such as `chore:` and `cho
 
 ## Configuration Notes
 If you add new page, component, or utility directories, update Tailwind `content` globs so class extraction continues to work. Do not commit local HBuilderX-generated artifacts unless they are required for the template itself.
+
+## Agent-Specific Instructions
+This repository includes a local skill at `.agents/skills/uniappx-project`. Use it first when working on `uni-app x` built-in components, platform APIs, compatibility checks, and conditional compilation. Treat the official `uni-app x` examples and compatibility notes referenced by that skill as the source of truth before introducing new patterns or abstractions.
