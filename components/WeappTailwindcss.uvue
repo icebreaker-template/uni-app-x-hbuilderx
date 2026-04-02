@@ -1,4 +1,8 @@
-<script setup>
+<script setup lang="ts">
+	defineOptions({
+		styleIsolation: 'app',
+	})
+
 	function copy(data : string) {
 		uni.setClipboardData({
 			data,
